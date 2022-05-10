@@ -37,8 +37,13 @@ char **read_file(const char *path)
 {
     char *buf = malloc(sizeof(char) * (check_size_file(path) + 1));
     char **tab = NULL;
+    int size = check_size_file(path);
 
-    read(open(path, O_RDONLY), buf, check_size_file(path));
+    if (size == 0) {
+        free(buf);
+        return (NULL);
+    }
+    read(open(path, O_RDONLY), buf, size);
     buf[check_size_file(path)] = '\0';
     if (check_size_file(path) <= 0)
         return (tab);

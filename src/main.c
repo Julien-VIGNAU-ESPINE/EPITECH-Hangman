@@ -54,6 +54,9 @@ int main(int ac, char **av)
     if (open_file(av[1]) == 1)
         return (84);
     dictionary = read_file(av[1]);
+    if (dictionary == NULL) {
+        return (84);
+    }
     if (check_tab(dictionary) == 1) {
         free_tab(dictionary);
         return (84);
