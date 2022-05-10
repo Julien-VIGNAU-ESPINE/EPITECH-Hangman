@@ -23,7 +23,7 @@ NAME = hangman
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CFLAGS) -g3
+	gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
 	rm -f src/*~
