@@ -13,9 +13,11 @@
 
 static char *read_letter(void)
 {
-    char *letter = malloc(sizeof(char) * 4);
+    char *letter = malloc(sizeof(char) * 5);
+    int nb_read = 0;
 
-    read(0, letter, 4);
+    nb_read = read(0, letter, 4);
+    letter[nb_read] = '\0';
     return (letter);
 }
 
@@ -64,6 +66,7 @@ int game_main(game_t *game)
         word = read_letter();
         letter_action(word, game);
         print_things(game->player_word, game->tries);
+        free(word);
         if (strcmp(game->secret_word, game->player_word) == 0) {
             write(1, "Congratulations!\n", 17);
             return (0);

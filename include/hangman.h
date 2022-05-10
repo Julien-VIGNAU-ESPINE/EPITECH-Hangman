@@ -9,9 +9,9 @@
     #define HANGMAN_H_
 
     typedef struct game_s {
-	int tries;
-	char *secret_word;
-	char *player_word;
+        int tries;
+        char *secret_word;
+        char *player_word;
     } game_t;
 
     void clean_str_end(char *str);
