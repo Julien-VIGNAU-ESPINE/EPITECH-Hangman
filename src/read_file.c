@@ -10,6 +10,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "hangman.h"
 
 static int check_size_file(const char *path)
 {

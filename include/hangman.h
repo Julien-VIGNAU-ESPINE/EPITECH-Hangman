@@ -20,5 +20,6 @@
     char **my_str_to_word_array(char *str, char delim);
     int open_file(const char *path);
     char **read_file(const char *path);
+    int init_struct(char **dictionary, int ac, char **av, game_t *game);
 
 #endif /* HANGMAN_H_ */
