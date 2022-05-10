@@ -59,6 +59,7 @@ int main(int ac, char **av)
         return (84);
     }
     init_struct(dictionary, ac, av, &game);
+    game_main(&game);
     free_all(&game, dictionary);
     return (0);
 }

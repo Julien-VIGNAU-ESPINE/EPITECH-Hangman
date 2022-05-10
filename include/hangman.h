@@ -21,5 +21,7 @@
     int open_file(const char *path);
     char **read_file(const char *path);
     int init_struct(char **dictionary, int ac, char **av, game_t *game);
+    int game_main(game_t *game);
+    int my_put_nbr(int nb);
 
 #endif /* HANGMAN_H_ */

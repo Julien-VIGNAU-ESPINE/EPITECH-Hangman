@@ -10,7 +10,9 @@ SRC	=	src/main.c \
 		src/my_str_to_word_array.c \
 		src/clean_str.c \
 		src/find_space.c \
-		src/init_struct.c
+		src/init_struct.c \
+		src/game.c \
+		src/my_put_nbr.c
 
 OBJ = $(SRC:.c=.o)
 

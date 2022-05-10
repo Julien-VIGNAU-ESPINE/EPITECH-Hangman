@@ -29,7 +29,7 @@ static char *create_player_word(int len)
 
 int init_struct(char **dictionary, int ac, char **av, game_t *game)
 {
-    int index = rand() % len_tab(dictionary);
+    int index = rand() % (len_tab(dictionary) - 1);
 
     game->tries = 10;
     if (ac == 3)
