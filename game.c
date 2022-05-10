@@ -10,12 +10,12 @@
 #include <string.h>
 #include "hangman.h"
 
-static char read_letter(void)
+static char *read_letter(void)
 {
-    char letter[2];
+    char letter[4];
 
-    read(0, &letter, 2);
-    return (letter[0]);
+    read(0, &letter, 4);
+    return (letter);
 }
 
 static int check_letter(game_t *game, char letter)
@@ -31,18 +31,28 @@ static int check_letter(game_t *game, char letter)
     return (if_in);
 }
 
-int game_main(game_t *game)
+static int letter_action(char *word, game_t *game)
 {
     char letter;
+    if (strlen(letter) >= 2)
+        write(2, "Guess must be a single letter\n", 30);
+    else if (check_letter(game, letter) == 0) {
+        letter = word[0];
+        printf("%c: is not in this word\n",letter);
+        game->tries -= 1;
+    }
+    return 0;
+}
+
+int game_main(game_t *game)
+{
+    char word[4];
 
     printf("%s\nTries: %i\n\n", game->game_word, game->tries);
     while (game->tries != 0) {
         write(1, "Your letter: ", 13);
-        letter = read_letter();
-        if (check_letter(game, letter) == 0) {
-            printf("%c: is not in this word\n", letter);
-            game->tries -= 1;
-        }
+        word = read_letter();
+        letter_action(word, game);
         printf("%s\nTries: %i\n\n", game->game_word, game->tries);
         if (strcmp(game->to_find, game->game_word) == 0) {
             printf("Congratulations!\n");
