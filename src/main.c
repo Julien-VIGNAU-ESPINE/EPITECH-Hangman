@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** Hangman
 ** File description:
-** stumper5
+** stumper7
 */
 
 #include <stdlib.h>

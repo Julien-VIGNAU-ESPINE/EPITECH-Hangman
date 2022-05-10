@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** my
+** hangman
 ** File description:
 ** my_str_to_word_array
 */

@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** my_compute_power_rec
+** hangman
 ** File description:
 ** clean str
 */

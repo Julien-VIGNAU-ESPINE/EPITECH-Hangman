@@ -11,7 +11,6 @@ SRC	=	src/main.c \
 		src/clean_str.c \
 		src/find_space.c
 
-
 OBJ = $(SRC:.c=.o)
 
 CFLAGS = -I ./include
@@ -24,11 +23,11 @@ $(NAME): $(OBJ)
 	gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
-		rm -f src/*~
+	rm -f src/*~
 
 fclean: clean
-		rm -f $(OBJ)
-		rm -f $(NAME)
+	rm -f $(OBJ)
+	rm -f $(NAME)
 
 re: fclean all
 

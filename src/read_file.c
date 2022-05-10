@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** Pokemon
+** hangman
 ** File description:
-** pokemon
+** hangman.h
 */
 
 #include <sys/stat.h>
